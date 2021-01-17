@@ -9,17 +9,17 @@ $carousel-item-height: 300px;
 
 @mixin zero-margin($pad-up-dn, $pad-left-right) {
     margin: 0px, auto;
-    padding: $pad-up-dn $pad-left-right;
+    padding: $pad-up-dn, $pad-left-right;
 }
 
 .row-header{
-    @include zero-margin(0px,0px);
+    @include zero-margin(0px, auto);
 }
 
 .row-content {
     @include zero-margin(50px,0px);
     border-bottom: 1px ridge;
-    min-height:400px;
+    min-height: 200px;
 }
 
 .footer{
@@ -40,7 +40,7 @@ address{
 }
 
 body{
-    padding:50px 0px 0px 0px;
+    padding:50px 0px 50px 0px;
     z-index:0;
 }
 
@@ -74,4 +74,20 @@ body{
     position: absolute;
     bottom: 0px;
     z-index: 1;
+}
+
+.modal-content {
+    .modal-header {
+        background-color: $background-dark;
+        color: floralwhite;
+    }
+
+    .modal-body {
+        background-color: $background-light;
+        color: #0f0f0f;
+    }
+}
+
+button.close {
+    color: floralwhite;
 }

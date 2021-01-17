@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="node_modules/bootstrap-social/bootstrap-social.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/styles.css">
 
 </head>
 
@@ -30,7 +30,7 @@
                     <li class="nav-item"><a class="nav-link" href="./contactus.html"><span class="fa fa-address-card fa-lg"></span> Contact</a></li>
                 </ul>
                 <span class="navbar-text">
-                    <a data-toggle="modal" data-target="#loginModal">
+                    <a id="loginButton">
                         <span class="fa fa-sign-in"></span> Login
                     </a>
                 </span>
@@ -90,13 +90,13 @@
                         </div>
                         <div class="col-12 col-sm align-self-center">
                             <a role="button"  class="btn btn-warning btn-sm btn-block nav-link"
-                                data-toggle="modal" data-html="true"
                                 title="Or Call us at <br><strong>+852 12345678</strong>"
-                                data-placement="bottom" data-target="#ReserveModal">Reserve Table</a>
+                                id="reserveButton"
+                            >Reserve Table</a>
                         </div>
                     </div>
 
-                    <div id="ReserveModal" class="modal fade" role="dialog">
+                    <div id="reserveModal" class="modal fade" role="dialog">
                         <div class="modal-dialog modal-lg" role="content">
                             <!-- Modal content-->
                             <div class="modal-content">
@@ -356,6 +356,23 @@
                 }
             });
 
+            $("#loginButton").click(function(){
+                if ($('#loginModal').on('show.bs.modal')) {
+                    $("#loginModal").modal('show');
+                }
+                else if($("loginModal").on('hide.bs.modal')) {
+                    $("loginModal").modal('show');
+                }
+            });
+
+            $("#reserveButton").click(function(){
+                if ($('#reserveModal').on('show.bs.modal')) {
+                    $("#reserveModal").modal('show');
+                }
+                else if($("reserveModal").on('hide.bs.modal')) {
+                    $("reserveModal").modal('show');
+                }
+            });
         });
     </script>
 </body>
